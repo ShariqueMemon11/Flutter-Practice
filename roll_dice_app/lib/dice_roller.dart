@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:roll_dice_app/style_text.dart';
 
 class DiceRoller extends StatefulWidget {
   const DiceRoller({super.key});
