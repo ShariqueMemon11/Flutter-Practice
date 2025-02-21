@@ -18,7 +18,21 @@ class GradientContainer extends StatelessWidget {
           end: Alignment.bottomCenter,
         ),
       ),
-      child: Center(child: DiceRoller()),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 280, top: 50),
+            child: Text(
+              "Dice Roller App",
+              style: TextStyle(
+                color: const Color.fromARGB(255, 175, 173, 217),
+                fontSize: 28,
+              ),
+            ),
+          ),
+          DiceRoller(),
+        ],
+      ),
     );
   }
 }

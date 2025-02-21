@@ -23,12 +23,18 @@ class _DicerollerState extends State<DiceRoller> {
     });
   }
 
+  void resetdise() {
+    setState(() {
+      diceImg = "assets/dice-1.png";
+      diceImg2 = "assets/dice-1.png";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Style_text("Dice Roller App"),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -37,13 +43,27 @@ class _DicerollerState extends State<DiceRoller> {
           ],
         ),
         const SizedBox(height: 40), // Adds spacing
-        TextButton(
-          onPressed: rolldice,
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.white,
-            textStyle: TextStyle(fontSize: 28),
-          ),
-          child: const Text("Roll Dice"),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(
+              onPressed: rolldice,
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+                textStyle: TextStyle(fontSize: 28),
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+              ),
+              child: const Text("Roll Dice"),
+            ),
+            TextButton(
+              onPressed: resetdise,
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+                textStyle: TextStyle(fontSize: 28),
+              ),
+              child: const Text("Reset Dice"),
+            ),
+          ],
         ),
       ],
     );
