@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/questions.screen.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -8,18 +9,24 @@ class StartPage extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset("assets/images/quiz-logo.png", width: 300),
-          SizedBox(height: 20),
-          const Text(
-            "Lear Flutter the fun way!",
-            style: TextStyle(fontSize: 24),
+          Image.asset(
+            "assets/images/quiz-logo.png",
+            width: 300,
+            color: const Color.fromARGB(141, 255, 255, 255),
           ),
-          SizedBox(height: 20),
-          ElevatedButton(
+          SizedBox(height: 50),
+          const Text(
+            "Learn Flutter the fun way!",
+            style: TextStyle(fontSize: 24, color: Colors.white),
+          ),
+          SizedBox(height: 30),
+          OutlinedButton.icon(
             onPressed: () {
-              Navigator.pushNamed(context, "/quiz");
+              QuestionsScreen();
             },
-            child: Text("-> Start Quiz"),
+            style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
+            icon: const Icon(Icons.play_arrow, color: Colors.white),
+            label: const Text("Start Quiz"),
           ),
         ],
       ),
